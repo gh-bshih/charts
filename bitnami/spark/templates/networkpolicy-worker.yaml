@@ -59,8 +59,8 @@ spec:
   {{- end }}
   ingress:
     - ports:
-        - port: {{ .Values.worker.containerPorts.cluster }}
-        - port: {{ ternary .Values.worker.containerPorts.https .Values.worker.containerPorts.http .Values.security.ssl.enabled }}
+        # - port: {{ .Values.worker.containerPorts.cluster }}
+        # - port: {{ ternary .Values.worker.containerPorts.https .Values.worker.containerPorts.http .Values.security.ssl.enabled }}
       {{- if not .Values.worker.networkPolicy.allowExternal }}
       from:
         - podSelector:
